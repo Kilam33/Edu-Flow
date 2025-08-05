@@ -71,7 +71,7 @@ export function AuthForm({ view = "sign_in" }: AuthFormProps) {
             }
           }}
           providers={[]}
-          redirectTo={`${window.location.origin}/auth/callback`}
+          redirectTo={typeof window !== 'undefined' ? `${window.location.origin}/auth/callback` : '/auth/callback'}
         />
       </CardContent>
       <CardFooter className="flex flex-col space-y-4">
