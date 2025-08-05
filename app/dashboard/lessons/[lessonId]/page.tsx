@@ -12,7 +12,8 @@ import { Save } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function LessonPage() {
-  const { lessonId } = useParams();
+  const params = useParams();
+  const lessonId = Array.isArray(params.lessonId) ? params.lessonId[0] : params.lessonId;
   const [lesson, setLesson] = useState<any>(null);
   const [course, setCourse] = useState<any>(null);
   const [note, setNote] = useState<any>(null);
